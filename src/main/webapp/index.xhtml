@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h1>Lista de ususarios</h1>
+
+	<p:linkButton outcome="adiconarUser" value="Adicionar Usuario"
+		style="margin-right:20px; margin-bottom:6px;" target="_blank">
+	</p:linkButton>
+	<p:dataTable value="#{cadastroDeUserBean.usuarios}" var="user">
+		<p:column headerText="Name">
+			<h:outputText value="#{user.nome}" />
+		</p:column>
+		<p:column headerText="E-mail">
+			<h:outputText value="#{user.email}" />
+		</p:column>
+		<p:column>
+			<p:commandButton type="button" value="Excluir"
+				styleClass="rounded-button ui-button-danger"
+				style="margin:0 3px 0 3px;" />
+			<p:linkButton outcome="editUser" value="Editar"
+				style="margin-right:20px;" styleClass="rounded-button ui-button-info">
+				<f:param name="userId" value="10"/>
+			</p:linkButton>
+		</p:column>
+	</p:dataTable>
+</h:body>
+</html>
