@@ -38,23 +38,30 @@ Implante a aplicação no servidor Tomcat.
 # Configuração do Banco de Dados
 Crie um banco de dados vazio no PostgreSQL com o nome "cadastro-usuario". Você pode usar a interface de linha de comando psql ou uma ferramenta gráfica como o pgAdmin.
 
-shell
-Copy code
 createdb cadastro-usuario
 Abra o arquivo src/main/resources/META-INF/persistence.xml na aplicação e ajuste as configurações de conexão com o banco de dados. Certifique-se de definir a URL, nome de usuário e senha corretos para o PostgreSQL.
 
-xml
-Copy code
-<persistence-unit name="jpa-persistence" transaction-type="RESOURCE_LOCAL">
-    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <class>com.example.modelo.Entidade</class>
-    <properties>
-        <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/cadastro-usuario"/>
-        <property name="hibernate.connection.username" value="seu_usuario"/>
-        <property name="hibernate.connection.password" value="sua_senha"/>
-        <!-- ... outras propriedades ... -->
-    </properties>
-</persistence-unit>
+- persistence.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="jpa-persistence" transaction-type="RESOURCE_LOCAL">
+
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/cadastro-user"/>
+            <property name="javax.persistence.jdbc.user" value="seu_usuario"/>
+            <property name="javax.persistence.jdbc.password" value="sua_senha"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <!-- Configuração para atualização automática do esquema (use com cuidado em produção) -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
+
 
 # Uso
 Navegue pela aplicação para testar suas funcionalidades. Você pode personalizar a aplicação de acordo com suas necessidades específicas. O JPA deve criar as tabelas automaticamente no banco de dados durante a implantação.
