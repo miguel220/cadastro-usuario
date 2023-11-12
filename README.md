@@ -25,7 +25,7 @@ https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.95/bin/apache-tomcat-8.5.95-window
 
 # Implantação
 - Clone este repositório para sua máquina:
-git clone https://github.com/seu-nome/sua-aplicacao-jsf.git
+[git clone https://github.com/seu-nome/sua-aplicacao-jsf.git](https://github.com/miguel220/cadastro-usuario.git)
 
 - Abra sua IDE (por exemplo, Eclipse, IntelliJ, NetBeans) e importe o projeto.
 
