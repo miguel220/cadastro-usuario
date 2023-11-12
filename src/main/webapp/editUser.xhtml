@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
-</head>
-<body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="css" name="style.css"/>
+	<title>Editar usuario</title>
+</h:head>
+<h:body>
+	<div class="card">
+		<h1 class="titulo-tela">Editar usuario</h1>
+		<p:messages />
+		<f:metadata>
+			<f:viewParam name="userId" value="#{cadastroDeUserBean.userId}"
+				converter="javax.faces.Long" />
+		</f:metadata>
+		<f:event type="preRenderView" listener="#{cadastroDeUserBean.init}" />
+		<h:form>
+			<div style="display: flex; flex-direction: column;">
+				<p:outputLabel for="nome">Nome:</p:outputLabel>
+				<p:inputText id="nome" value="#{cadastroDeUserBean.usuario.nome}"
+					style="width: 400px;" />
 
-</body>
+				<p:outputLabel for="email">E-mail:</p:outputLabel>
+				<p:inputText id="email" value="#{cadastroDeUserBean.usuario.email}"
+					style="width: 400px;" />
+
+				<p:outputLabel for="senha">Senha:</p:outputLabel>
+				<p:password id="senha" value="#{cadastroDeUserBean.usuario.senha}"
+					feedback="true" style="width: 400px;">
+					<f:validateLength minimum="8" />
+				</p:password>
+				<div style="display: block;">
+					<p:commandButton value="Atualizar"
+						styleClass="ui-button-raised ui-button-flat"
+						action="#{cadastroDeUserBean.atualizarUser}" update="@form"
+						style="margin-top:10px; width: 200px;" />
+					<p:commandButton value="Voltar"
+						style="margin-top:10px; width: 200px;"
+						styleClass="ui-button-raised ui-button-flat"
+						action="#{cadastroDeUserBean.navegarParaPagina}" update="@form"
+						process="@this">
+					</p:commandButton>
+
+				</div>
+			</div>
+		</h:form>
+	</div>
+</h:body>
 </html>

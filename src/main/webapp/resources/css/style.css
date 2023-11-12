@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+	font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}
+.titulo-tela {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}
+.input-label {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 200;
+}
+.card {
+    width: 400px; /* Largura desejada */
+    margin: 0 auto; /* Margem automática para centralização horizontal */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centralização vertical e horizontal */
+}

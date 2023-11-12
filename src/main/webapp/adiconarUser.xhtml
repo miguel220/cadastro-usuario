@@ -6,25 +6,26 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Insert title here</title>
+	<h:outputStylesheet library="css" name="style.css"/>
+	<title>Adicionar ususario</title>
 </h:head>
 <h:body>
 	<div class="card">
-		<h1>Adicionar ususario</h1>
-		<p:messages />
+		<h1 class="titulo-tela">Adicionar ususario</h1>
+		<p:growl id="messages" showDetail="true" />
 
-		<h:form>
+		<h:form id="form-cadastro">
 			<div style="display: flex; flex-direction: column;">
-				<p:outputLabel for="nome">Nome:</p:outputLabel>
-				<p:inputText id="nome" value="#{cadastroDeUserBean.usuario.nome}"
+				<p:outputLabel class="input-label" for="nome">Nome:</p:outputLabel>
+				<p:inputText class="input-label" id="nome" value="#{cadastroDeUserBean.usuario.nome}"
 					required="true" style="width: 400px;" />
 
-				<p:outputLabel for="email">E-mail:</p:outputLabel>
-				<p:inputText id="email" value="#{cadastroDeUserBean.usuario.email}"
+				<p:outputLabel class="input-label" for="email">E-mail:</p:outputLabel>
+				<p:inputText class="input-label" id="email" value="#{cadastroDeUserBean.usuario.email}"
 					required="true" style="width: 400px;" />
 
-				<p:outputLabel for="senha">Senha:</p:outputLabel>
-				<p:password id="senha" value="#{cadastroDeUserBean.usuario.senha}"
+				<p:outputLabel class="input-label" for="senha">Senha:</p:outputLabel>
+				<p:password class="input-label" id="senha" value="#{cadastroDeUserBean.usuario.senha}"
 					required="true" feedback="true" style="width: 400px;">
 					<f:validateLength minimum="8" />
 				</p:password>
