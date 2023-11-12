@@ -1,13 +1,23 @@
-README - Aplicação JSF com JDK 11, Tomcat 8.5 e JPA (PostgreSQL)
-Visão Geral
-Este repositório contém uma aplicação web construída com JavaServer Faces (JSF), usando o JDK 11 e implantada no servidor Tomcat 8.5. A aplicação é configurada para usar Java Persistence API (JPA) e Hibernate como provedor de persistência, com um banco de dados PostgreSQL.
+# README - Aplicação JSF com JDK 11, Tomcat 8.5 e JPA (PostgreSQL)
+# Visão Geral
+Este repositório contém uma aplicação web construída com JavaServer Faces (JSF), usando o JDK 21 e implantada no servidor Tomcat 8.5. A aplicação é configurada para usar Java Persistence API (JPA) e Hibernate como provedor de persistência, com um banco de dados PostgreSQL.
 
 # Pré-requisitos
 Antes de começar, certifique-se de que você tenha as seguintes ferramentas instaladas:
 
-JDK 11: Certifique-se de que o JDK 11 esteja instalado e configurado em sua máquina.
+JDK 11: Certifique-se de que o JDK 21 esteja instalado e configurado em sua máquina.
+Para Windows:
+https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe
+
+Para Linux:
+https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+
+Para Mac:
+https://download.oracle.com/java/21/latest/jdk-21_macos-x64_bin.dmg
 
 Tomcat 8.5: Faça o download e instale o Tomcat 8.5.
+Para Windows:
+https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.95/bin/apache-tomcat-8.5.95-windows-x64.zip
 
 Git: Caso você queira clonar este repositório.
 
