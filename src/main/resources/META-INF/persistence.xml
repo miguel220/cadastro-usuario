@@ -5,7 +5,6 @@
              version="2.1">
 
     <persistence-unit name="jpa-persistence" transaction-type="RESOURCE_LOCAL">
-        <class>com.example.User</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/cadastro-user"/>
